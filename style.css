@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /*Coloque o que deve ficar como padrão (DARK)*/
+  --text-color: white;
+  --bg-ligth-or-dark: url(toggleDarkDesktop.jpg);
+  --border-dark-or-ligth: rgba(255, 255, 255, 1);
+  --bg-links-ligth-or-dark: rgba(230, 230, 230, 0.1);
+  --bg-switch-ligth-or-dark: rgba(230, 230, 230, 0.1);
+  --bg-social-hover-ligth-or-Dark: rgba(0, 0, 0, 0.1);
+  --bg-socialMidias-ligth-or-dark: rgba(230, 230, 230, 0.2);
+  --border-button-ligth-or-dark: rgba(255, 255, 255, 1);
+  --bg-description-dark-or-ligth: rgba(230, 230, 230, 0.1);
+  --bg-description-hover-dark-or-ligth: rgba(0, 0, 0, 0.1);
+}
+
+.ligth {
+  /*DICA: use o mesmo nome nas variáveis para a troca ser bem efetuada*/
+  --text-color: black;
+  --bg-ligth-or-dark: url(toggleLigthDesktop.jpg);
+  --border-dark-or-ligth: rgba(0, 0, 0, 0.5);
+  --bg-links-ligth-or-dark: rgba(0, 0, 0, 0.1);
+  --bg-switch-ligth-or-dark: rgba(0, 0, 0, 0.1);
+  --bg-social-hover-ligth-or-Dark: rgba(230, 230, 230, 0.1);
+  --bg-socialMidias-ligth-or-dark: rgba(0, 0, 0, 0.2);
+  --border-button-ligth-or-dark: rgba(0, 0, 0, 0.5);
+  --bg-description-dark-or-ligth: rgba(0, 0, 0, 0.1);
+  --bg-description-hover-dark-or-ligth: rgba(230, 230, 230, 0.1);
+}
+
+.ligth #switch button {
+  transform: translate(80%, -36%);
+  background: url(MoonStars.jpg) no-repeat center white;
+  animation: slide-in 0.4s;
+}
+
+body {
+  background: var(--bg-ligth-or-dark) center top/cover;
+  background-attachment: fixed;
+  height: 100vh;
+  padding: 20px;
+}
+
+body * {
+  font-family: "inter", sans-rerif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 100%;
+  min-height: 678px;
+  max-width: 588px; /*Largura de um desktop*/
+  padding: 15px;
+  /* display: block; */
+  margin: 100px auto;
+}
+
+#imgArraial img {
+  display: block;
+  height: 200px;
+  width: 200;
+  border-radius:10px;
+  margin: 50px auto;
+  
+
+}
+
+#myName p {
+  display: flex;
+  justify-content: center; /*Só funciona com display flex*/
+  align-items: center; /*Só funciona com display flex*/
+  font-size: 14px;
+}
+
+#switch {
+  display: block;
+  margin: 20px auto 20px;
+  position: relative;
+  width: 64px;
+  border: var(--border-dark-or-ligth) 1px solid;
+  border-radius: 10cqi;
+  background: var(--bg-switch-ligth-or-dark);
+}
+
+#switch button {
+  width: 35px;
+  height: 35px;
+  display: block;
+  margin: 10px auto;
+  border-radius: 50%;
+  background: url(Sun.jpg) no-repeat center white;
+  position: absolute;
+  z-index: 1; /*Andar 1*/
+  transform: translate(-3%, -36%);
+  border: var(--border-button-ligth-or-dark) 1px solid;
+  animation: slide-out 0.3s;
+}
+
+#switch span {
+  display: block;
+  width: 90px;
+  height: 29px;
+  border-radius: 9999px;
+  position: relative;
+  -webkit-backdrop-filter: blur(4px);
+}
+
+#links a {
+  display: flex;
+  align-items: center; /*Alinha os itens na horizontal */
+  justify-content: center; /*Alinha os itens na vertical*/
+  padding: 15px;
+  background: var(--bg-links-ligth-or-dark);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid var(--border-dark-or-ligth);
+  border-radius: 8px;
+  margin: 10px 30px;
+  font-weight: 500;
+}
+
+#socialMedia {
+  display: flex;
+  justify-content: center; /*Só funciona com display flex*/
+  align-items: center; /*Só funciona com display flex*/
+  font-size: 18px;
+  margin: 30px auto 0px;
+  transform: translate(0px, 23px);
+  opacity: 0.86;
+}
+
+#socialMidias {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /*Space only between the items*/
+  font-size: 25px;
+  margin: 30px auto;
+  color: black;
+}
+
+#paragraph {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+#socialMidias a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Hover*/
+
+#links a:hover {
+  backdrop-filter: blur(10px);
+}
+
+#links a:hover {
+  background: var(--bg-social-hover-ligth-or-Dark);
+  transition: 0.4s;
+}
+
+#socialMidias a:hover {
+  background: var(--bg-socialMidias-ligth-or-dark);
+  transition: 0.25s;
+}
+
+.me:hover {
+  background: var(--bg-description-hover-dark-or-ligth);
+  transition: 1s;
+  transition-delay: 0.05s;
+}
+.mySkills:hover {
+  background: var(--bg-description-hover-dark-or-ligth);
+  transition: 1s;
+  transition-delay: 0.05s;
+}
+.studies:hover {
+  background: var(--bg-description-hover-dark-or-ligth);
+  transition: 1s;
+  transition-delay: 0.05s;
+}
+.projects:hover {
+  background: var(--bg-description-hover-dark-or-ligth);
+  transition: 1s;
+  transition-delay: 0.05s;
+}
+
+/* Responsividade  */
+
+@media (min-width: 700px) {
+  :root {
+    --bg-ligth-or-dark: url(toggleDarkDesktop.jpg);
+  }
+
+  .ligth {
+    --bg-ligth-or-dark: url(toggleLigthDesktop.jpg);
+  }
+}
+
+/* Animation */
+
+@keyframes slide-in {
+  from {
+    transform: translate(-3%, -36%);
+  }
+
+  to {
+    transform: translate(80%, -36%);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translate(80%, -36%);
+  }
+
+  to {
+    transform: translate(-3%, -36%);
+  }
+}
+
+/* Descriptions */
+#description {
+  display: flex;
+  justify-content: center;
+  margin: 0px 10px;
+  /* border: 1px solid blue; */
+}
+
+.me, .mySkills, .studies, .projects {
+  display: block;
+  /* min-width: 400px; */
+  width: 400px;
+  height: 300px;
+  padding: 20px;
+  background: var(--bg-description-dark-or-ligth);
+  border-radius: 10px;
+  margin: auto 10px;
+  outline: none;
+  border: 1px solid var(--border-dark-or-ligth);
+}
+
+#description h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+#description p {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+ text-justify: auto; 
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Creat scroll bar */
+
+/* .scrollBar {
+  height: 9999px;
+} */
